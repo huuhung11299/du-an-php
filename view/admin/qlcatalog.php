@@ -60,21 +60,21 @@ if(isset($_GET['edit'])) {
 
             <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
             
-                <form class="row form-group"  action="">
+                
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tên Danh Muc</label></div>
                     <div class="col-12 col-md-9"><input type="text" id="text-input" name="tendm" placeholder="Tên tin tuc" value="" class="form-control"><small class="form-text text-muted"></small></div>
-                </form>
+          
                 
                 
                 
-                <form class="card-footer" action="">
+              
                     <button type="submit" name="submit" class="btn btn-primary btn-sm">
                         <i class="fa fa-dot-circle-o"></i> Submit
                     </button>
                     <button type="reset" class="btn btn-danger btn-sm">
                         <i class="fa fa-ban"></i> Reset
                     </button>
-                </form>
+              
             </form>
         </div>
 <!-- Het nhap danh muc  -->

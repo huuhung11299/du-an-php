@@ -2,7 +2,7 @@
     class connect {
         var $db = NULL;
         function __construct() {
-            $dsn = "mysql:host=localhost;dbname=news";
+            $dsn = "mysql:host=localhost;dbname=TinTuc";
             $user = 'root';
             $pass = 'root';
             $this->db = new PDO($dsn,$user,$pass);
