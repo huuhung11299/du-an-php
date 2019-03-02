@@ -1,0 +1,6 @@
+.card .card-body .form-group span{
+    display: none !important;
+}
+.card {
+    padding: 1rem
+}
