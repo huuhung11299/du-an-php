@@ -13,7 +13,13 @@ if(isset($_GET['delete']) ) {
     $iddm = $_GET['id'];
       $cat->deleteCat($iddm); 
 };
+if(isset($_POST['update']) ) {
+    $dm = $_POST['tendm'];
+    $cat = new Catalog();
+    $iddm = $_GET['id'];
+    $cat->updateCat($dm,$iddm);
 
+}
 ?>
 
 <div class="col-md-12">
@@ -26,31 +32,33 @@ if(isset($_GET['delete']) ) {
 <!-- Nhap danh muc  -->
 <?php 
                                       
-if(isset($_GET['edit'])) {
+if(isset($_GET['edit']) && $_GET['id']) {
     $cat = new Catalog();
-    $id = $_GET['iddm'];
-    $dsdm =  $cat->getCateById($iddm);
+    $id = $_GET['id'];
+    $dsdm =  $cat->getCateById($id);
     extract($dsdm);
     ?>
         <div class="card-body card-block">
 
             <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
             
-                <form class="row form-group"  action="">
+              
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tên Danh Muc</label></div>
-                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="tendm" placeholder="Tên tin tuc" value="<?php echo $dsdm['tendm'] ?>" class="form-control"><small class="form-text text-muted"></small></div>
-                </form>
+                    <div class="col-12 col-md-9">
+                    <input type="text" id="text-input" name="tendm" placeholder="Tên tin tuc" value="<?php echo $dsdm['tendm'] ?>" class="form-control">
+                    <small class="form-text text-muted"></small></div>
+              
                 
                 
                 
-                <form class="card-footer" action="">
-                    <button type="submit" name="submit" class="btn btn-primary btn-sm">
+                
+                    <button type="submit" name="update" class="btn btn-primary btn-sm">
                         <i class="fa fa-dot-circle-o"></i> Submit
                     </button>
                     <button type="reset" class="btn btn-danger btn-sm">
                         <i class="fa fa-ban"></i> Reset
                     </button>
-                </form>
+                
             </form>
         </div>
 <!-- Nhap danh muc  -->
@@ -108,7 +116,7 @@ if(isset($_GET['edit'])) {
                             echo '<tr>
                             <td scope="col">'.$set['iddm'].'</td>
                             <td scope="col">'.$set['tendm'].'</td>
-                            <td scope="col"><a href="?atc=qlcatalog&id='.$set['iddm'].'&edit"><i class="fa fa-pencil"></i></a></td>
+                            <td scope="col"><a href="?act=qlcatalog&id='.$set['iddm'].'&edit"><i class="fa fa-pencil"></i></a></td>
                             <td scope="col"><a href="?act=qlcatalog&id='.$set['iddm'].'&delete"><i class="fa fa-trash"></i></a></td>
                                 </tr>';
                             }?>

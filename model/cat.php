@@ -55,9 +55,9 @@ class Catalog {
         $db->execute($query);
     }
     // update danh muc
-    function updateCat($iddm,$tendm){
+    function updateCat($tendm,$iddm){
         $db = new connect();
-        $query = "UPDATE danhmuc SET tendm='.$tendm.'  WHERE iddm = '$iddm'";
+        $query = "UPDATE danhmuc SET tendm='$tendm' WHERE iddm=$iddm";
         $db->execute($query);
     }
 }
